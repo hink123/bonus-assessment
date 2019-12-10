@@ -6,3 +6,12 @@ body {
 a {
   color: #00B7FF;
 }
+
+button.delete {
+  background-color: red;
+  color: white;
+}
+
+form div {
+  padding-bottom: 1vmin;
+}

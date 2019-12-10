@@ -16,7 +16,7 @@
               <%= hobby.name %> - <a href="/hobbies/<%= hobby._id %>">view details</a>
             </li>
             <form action="/hobbies/<%= hobby._id %>?_method=DELETE" method="POST">
-              <button type="submit">X</button>
+              <button type="submit" class="delete">X</button>
             </form>
           <% }) %>
         </ul>    
@@ -27,9 +27,15 @@
     <h2>Add New Hobby!</h2>
     <div>
       <form action="/hobbies" method="POST">
-        <input type="text" name="name" placeholder="hobby name" autocomplete="off">
-        <input type="text" name="description" placeholder="hobby description" autocomplete="off">
-        <button type="submit">Submit Hobby</button>
+        <div>
+          <input type="text" name="name" placeholder="hobby name" autocomplete="off">
+        </div>
+        <div>
+          <input type="text" name="description" placeholder="hobby description" autocomplete="off">
+        </div>
+        <div>
+          <button type="submit">Submit Hobby</button>
+        </div>
       </form>
     </div>
 
