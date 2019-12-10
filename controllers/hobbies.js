@@ -5,7 +5,8 @@ module.exports = {
     index,
     create,
     show,
-    update
+    update,
+    delete: deleteOne
 }
 
 function index(req, res) {
@@ -39,5 +40,11 @@ function update(req, res) {
         hobby.save(function(err) {
             res.redirect('/hobbies');
         })
+    })
+}
+
+function deleteOne(req, res) {
+    Hobby.findByIdAndDelete(req.params.id, function(err, hobby) {
+        res.redirect('/hobbies');
     })
 }

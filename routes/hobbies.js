@@ -7,5 +7,6 @@ router.get('/', hobbiesCtlr.index);
 router.post('/', hobbiesCtlr.create);
 router.get('/:id', hobbiesCtlr.show);
 router.put('/:id', hobbiesCtlr.update);
+router.delete('/:id', hobbiesCtlr.delete);
 
 module.exports = router;

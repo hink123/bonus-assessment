@@ -15,7 +15,9 @@
             <li>
               <%= hobby.name %> - <a href="/hobbies/<%= hobby._id %>">view details</a>
             </li>
-            <button>X</button>
+            <form action="/hobbies/<%= hobby._id %>?_method=DELETE" method="POST">
+              <button type="submit">X</button>
+            </form>
           <% }) %>
         </ul>    
     <% } %>
