@@ -3,7 +3,8 @@ var Hobby = require('../models/hobby');
 
 module.exports = {
     index,
-    create
+    create,
+    show
 }
 
 function index(req, res) {
@@ -21,5 +22,11 @@ function create(req, res) {
     hobby.save(function(err) {
         if (err) return res.redirect('/hobbies');
         res.redirect('/hobbies');
+    })
+}
+
+function show(req, res) {
+    Hobby.findById(req.params.id, function(err, hobby) {
+        res.render('show', {hobby});
     })
 }

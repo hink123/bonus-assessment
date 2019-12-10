@@ -13,13 +13,12 @@
         <ul>
           <% hobbies.forEach(function(hobby) { %>
             <li>
-              <%= hobby.name %> - <a href="">view details</a>
+              <%= hobby.name %> - <a href="/hobbies/<%= hobby._id %>">view details</a>
             </li>
             <button>X</button>
-
-        </ul>
-       
-    <% })} %>
+          <% }) %>
+        </ul>    
+    <% } %>
 
     
     <h3>--------------------------------</h3>
@@ -27,7 +26,7 @@
     <div>
       <form action="/hobbies" method="POST">
         <input type="text" name="name" placeholder="hobby name" autocomplete="off">
-        <input type="textare" name="description" placeholder="hobby description" autocomplete="off">
+        <input type="text" name="description" placeholder="hobby description" autocomplete="off">
         <button type="submit">Submit Hobby</button>
       </form>
     </div>

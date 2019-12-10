@@ -5,5 +5,6 @@ var hobbiesCtlr = require('../controllers/hobbies');
 /* GET users listing. */
 router.get('/', hobbiesCtlr.index);
 router.post('/', hobbiesCtlr.create);
+router.get('/:id', hobbiesCtlr.show);
 
 module.exports = router;
