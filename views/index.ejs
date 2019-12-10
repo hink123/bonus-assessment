@@ -5,7 +5,34 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <h1>Hobbies Page</h1>
+
+    <% if(hobbies.length === 0) { %>
+        <h4>There are currently no hobbies</h4>
+    <% } else { %>
+        <ul>
+          <% hobbies.forEach(function(hobby) { %>
+            <li>
+              <%= hobby.name %> - <a href="">view details</a>
+            </li>
+            <button>X</button>
+
+        </ul>
+       
+    <% })} %>
+
+    
+    <h3>--------------------------------</h3>
+    <h2>Add New Hobby!</h2>
+    <div>
+      <form action="/hobbies" method="POST">
+        <input type="text" name="name" placeholder="hobby name" autocomplete="off">
+        <input type="textare" name="description" placeholder="hobby description" autocomplete="off">
+        <button type="submit">Submit Hobby</button>
+      </form>
+    </div>
+
+
+
   </body>
 </html>
