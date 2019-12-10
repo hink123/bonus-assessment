@@ -4,7 +4,8 @@ var Hobby = require('../models/hobby');
 module.exports = {
     index,
     create,
-    show
+    show,
+    update
 }
 
 function index(req, res) {
@@ -28,5 +29,15 @@ function create(req, res) {
 function show(req, res) {
     Hobby.findById(req.params.id, function(err, hobby) {
         res.render('show', {hobby});
+    })
+}
+
+function update(req, res) {
+    Hobby.findById(req.params.id, function(err, hobby) {
+        hobby.name = req.body.name;
+        hobby.description = req.body.description;
+        hobby.save(function(err) {
+            res.redirect('/hobbies');
+        })
     })
 }
